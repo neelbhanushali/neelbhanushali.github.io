@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Neel Bhanushali</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <style type="text/css">
+    	body {
+    		min-height: 2000px;
+    	}
+
+    	#preloader {
+    		position: fixed;
+    		left: 0; top: 0;
+    		width: 100%; height: 100%;
+    		background: #fff;
+    		z-index: 9999;
+    	}
+
+    	#preloader div.preloader-wrapper {
+    		margin: 0 auto;
+    	}
+
+    	.social i {
+    		font-size: 2em;
+    		cursor: pointer;
+    	}
+
+    	.brand-logo { margin-left: 10px }
+    </style>
+</head>
+<body>
+	<div id="top" class="scrollspy"></div>
+	<div id="preloader" class="valign-wrapper teal accent-1">
+		<div class="preloader-wrapper big active">
+			<div class="spinner-layer spinner-blue">
+				<div class="circle-clipper left">
+				<div class="circle"></div>
+				</div><div class="gap-patch">
+				<div class="circle"></div>
+				</div><div class="circle-clipper right">
+				<div class="circle"></div>
+				</div>
+			</div>
+
+			<div class="spinner-layer spinner-red">
+				<div class="circle-clipper left">
+				<div class="circle"></div>
+				</div><div class="gap-patch">
+				<div class="circle"></div>
+				</div><div class="circle-clipper right">
+				<div class="circle"></div>
+				</div>
+			</div>
+
+			<div class="spinner-layer spinner-yellow">
+				<div class="circle-clipper left">
+				<div class="circle"></div>
+				</div><div class="gap-patch">
+				<div class="circle"></div>
+				</div><div class="circle-clipper right">
+				<div class="circle"></div>
+				</div>
+			</div>
+
+			<div class="spinner-layer spinner-green">
+				<div class="circle-clipper left">
+				<div class="circle"></div>
+				</div><div class="gap-patch">
+				<div class="circle"></div>
+				</div><div class="circle-clipper right">
+				<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<ul id="slide-out" class="side-nav">
+		<li>
+			<div class="userView">
+				<span class="black-text name">Neel Bhanushali</span>
+				<span class="black-text email">neal.bhanushali@gmail.com</span>
+				<span class="social">
+					<i data-url="https://www.facebook.com/kevinbhaidaboss" class="fa fa-facebook-official" aria-hidden="true"></i>
+					<i data-url="https://twitter.com/kevinbhaidaboss/" class="fa fa-twitter-square" aria-hidden="true"></i>
+					<i data-url="https://www.instagram.com/kevinbhaidaboss/" class="fa fa-instagram" aria-hidden="true"></i>
+					<i data-url="https://github.com/neelbhanushali" class="fa fa-github-square" aria-hidden="true"></i>
+					<i data-url="https://jsfiddle.net/user/kevinbhaidaboss/" class="fa fa-jsfiddle" aria-hidden="true"></i>
+					<i data-url="https://kbdb.000webhostapp.com/" class="fa fa-globe" aria-hidden="true"></i>
+				</span>
+			</div>
+		</li>
+		<li><div class="divider"></div></li>
+		<li><a class="subheader">Projects</a></li>
+		<li><a class="waves-effect">Coming Soon...</a></li>
+	</ul>
+
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper teal">
+				<a href="#" data-activates="slide-out" class="button-collapse"><i style="font-size: 2em" class="fa fa-bars" aria-hidden="true"></i></a>
+				<a href="/" class="brand-logo">Neel Bhanushali</a>
+			</div>
+		</nav>
+	</div>
+
+
+	<div class="fixed-action-btn">
+		<a class="btn-floating btn-large z-depth-3 waves-effect">
+			<i onclick="$('.button-collapse').sideNav('show')" class="fa fa-bars" aria-hidden="true"></i>
+		</a>
+		<a id="gototopbtn" href="#top" class="btn-floating btn-large hide z-depth-3 waves-effect">
+			<i class="fa fa-chevron-up" aria-hidden="true"></i>
+		</a>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		$('.button-collapse').sideNav();
+		$('.scrollspy').scrollSpy();
+
+		window.addEventListener("scroll", function() {
+			if(window.scrollY >= 369)
+				document.getElementById("gototopbtn").classList.remove("hide");
+			else
+				document.getElementById("gototopbtn").classList.add("hide");
+		});
+
+		document.body.setAttribute("onload", "hidePreloader()");
+
+
+		function hidePreloader() { 
+			setTimeout(function() {
+				document.getElementById("preloader").style.display = "none"; 
+			}, 690);
+		}
+		function showPreloader(el) { document.getElementById("preloader").style.display = "block"; }
+
+		$(".social i[data-url]").on("click",function() {
+			document.location = $(this).attr("data-url");
+		});
+	</script>
+</body>
+</html>
