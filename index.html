@@ -31,6 +31,18 @@
     	}
 
     	.brand-logo { margin-left: 10px }
+
+		header, main, footer, .navbar-fixed {
+			padding-left: 300px;
+		}
+		#menuopenbtn { display: none; }
+
+		@media only screen and (max-width : 992px) {
+			header, main, footer, .navbar-fixed {
+				padding-left: 0;
+			}
+			#menuopenbtn { display: block; }
+		}
     </style>
 </head>
 <body>
@@ -83,7 +95,7 @@
 	<!-- Preloader Section Ends -->
 
 	<!-- Side Nav -->
-	<ul id="slide-out" class="side-nav">
+	<ul id="slide-out" class="side-nav fixed">
 		<li>
 			<div class="userView">
 				<span class="black-text name">Neel Bhanushali</span>
@@ -117,7 +129,7 @@
 
 	<!-- FAB -->
 	<div class="fixed-action-btn">
-		<a class="btn-floating btn-large z-depth-3 waves-effect">
+		<a id="menuopenbtn" class="btn-floating btn-large z-depth-3 waves-effect">
 			<i onclick="$('.button-collapse').sideNav('show')" class="fa fa-bars" aria-hidden="true"></i>
 		</a>
 		<a id="gototopbtn" href="#top" class="btn-floating btn-large hide z-depth-3 waves-effect">
