@@ -6,12 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <style type="text/css">
-    	body {
+    	/*body {
     		min-height: 2000px;
-    	}
+    	}*/
 
     	#preloader {
     		position: fixed;
@@ -35,21 +36,42 @@
 		header, main, footer, .navbar-fixed {
 			padding-left: 300px;
 		}
-		#menuopenbtn { display: none; }
+
+		#gototopbtn {
+			margin-right: 310px;
+		}
 
 		@media only screen and (max-width : 992px) {
 			header, main, footer, .navbar-fixed {
 				padding-left: 0;
 			}
-			#menuopenbtn { display: block; }
+			#gototopbtn {
+				margin-right: 10px;
+			}
+		}
+
+		i.material-icons.close { display: none; }
+
+		.navbar-fixed {
+			position: fixed;
+			bottom: 0;
+		}
+
+		main {
+			padding-top: 10px;
+			padding-bottom: 69px !important;
+		}
+
+		#menuopen, #gototopbtn {
+			font-size: 2em;
 		}
     </style>
 </head>
-<body>
+<body onload="hidePreloader()">
 	<div id="top" class="scrollspy"></div>
 	
 	<!-- Preloader Section -->
-	<div id="preloader" class="valign-wrapper teal accent-1">
+	<div id="preloader" class="valign-wrapper">
 		<div class="preloader-wrapper big active">
 			<div class="spinner-layer spinner-blue">
 				<div class="circle-clipper left">
@@ -94,16 +116,36 @@
 	</div>
 	<!-- Preloader Section Ends -->
 
+	<!-- Navbar -->
+	<div id="navbar" class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper teal lighten-1">
+				<a id="menuopen" class="button-collapse" data-activates="slide-out">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</a>
+				<a href="/" class="" style="width: 80%">
+					<a href="/" class="breadcrumb">/</a>
+				</a>
+				<a id="gototopbtn" href="#top" class="hide right">
+					<i class="fa fa-chevron-up" aria-hidden="true"></i>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<!-- Navbar ends -->
+
 	<!-- Side Nav -->
 	<ul id="slide-out" class="side-nav fixed">
 		<li>
 			<div class="userView">
+				<img style="width: 69%; border-radius: 50%;" src="pp.jpg">
 				<span class="black-text name">Neel Bhanushali</span>
-				<span class="black-text email">neal.bhanushali@gmail.com</span>
+				<span class="black-text email"><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=neal.bhanushali@gmail.com">neal.bhanushali@gmail.com</a></span>
 				<span class="social">
 					<i data-url="https://www.facebook.com/kevinbhaidaboss" class="fa fa-facebook-official" aria-hidden="true"></i>
 					<i data-url="https://twitter.com/kevinbhaidaboss/" class="fa fa-twitter-square" aria-hidden="true"></i>
 					<i data-url="https://www.instagram.com/kevinbhaidaboss/" class="fa fa-instagram" aria-hidden="true"></i>
+					<i data-url="https://www.snapchat.com/add/unique-alias" class="fa fa-snapchat-square" aria-hidden="true"></i>
 					<i data-url="https://github.com/neelbhanushali" class="fa fa-github-square" aria-hidden="true"></i>
 					<i data-url="https://jsfiddle.net/user/kevinbhaidaboss/" class="fa fa-jsfiddle" aria-hidden="true"></i>
 					<i data-url="https://kbdb.000webhostapp.com/" class="fa fa-globe" aria-hidden="true"></i>
@@ -116,35 +158,60 @@
 	</ul>
 	<!-- Side nav Ends -->
 
-	<!-- Navbar -->
-	<!-- <div class="navbar-fixed">
-		<nav>
-			<div class="nav-wrapper teal">
-				<a href="#" data-activates="slide-out" class="button-collapse"><i style="font-size: 2em" class="fa fa-bars" aria-hidden="true"></i></a>
-				<a href="/" class="brand-logo">Neel Bhanushali</a>
-			</div>
-		</nav>
-	</div> -->
-	<!-- Navbar ends -->
-
 	<!-- FAB -->
 	<div class="fixed-action-btn">
-		<a id="menuopenbtn" class="btn-floating btn-large z-depth-3 waves-effect button-collapse" data-activates="slide-out">
+		<!-- <a id="menuopenbtn" class="btn-floating btn-large z-depth-3 waves-effect button-collapse" data-activates="slide-out">
 			<i class="fa fa-bars" aria-hidden="true"></i>
-		</a>
-		<a id="gototopbtn" href="#top" class="btn-floating btn-large hide z-depth-3 waves-effect">
+		</a> -->
+		<!-- <a id="gototopbtn" href="#top" class="btn-floating btn-large hide z-depth-3 waves-effect">
 			<i class="fa fa-chevron-up" aria-hidden="true"></i>
-		</a>
+		</a> -->
 	</div>
 	<!-- FAB ends -->
 
 	<!-- Content of page -->
-	<main class="container"></main>
+	<main class="container">
+		<div class="input-field col l3 m6 s12">
+			<select id="select">
+				<option value="" disabled>Choose your option</option>
+				<option value="1" selected>Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+			<label>Materialize Select</label>
+		</div>
+	</main>
+	<!-- contents end -->
 
 	<script type="text/javascript">
-		// inits
-		$('.button-collapse').sideNav();
-		$('.scrollspy').scrollSpy();
+
+		$(document).ready(function() {
+			// inits
+			$('.button-collapse').sideNav();
+			$('.scrollspy').scrollSpy();
+			$('select').material_select();
+			select_init();
+		});
+
+
+		function ID(x) { return document.getElementById(x); }
+
+		function select_init() {
+			$("select").parent().find("li").attr("onclick","select_update(this)");
+		}
+
+		function select_update(li) {
+			var a = li.parentNode.getElementsByClassName("active")[0].children[0];
+			var select = li.parentNode.parentNode.getElementsByTagName("select")[0];
+			var options = select.children;
+			for(var i = 0; i < options.length; i++)
+				if(options[i].innerHTML == a.innerHTML ) 
+					options[i].setAttribute("selected","selected");
+				else 
+					options[i].removeAttribute("selected");
+		}
+
+		
 
 		//scroll eventlistener
 		window.addEventListener("scroll", function() {
@@ -155,7 +222,7 @@
 		});
 
 		//body onload event
-		document.body.setAttribute("onload", "hidePreloader()");
+		// document.body.setAttribute("onload", "hidePreloader()");
 
 		//preloader fns
 		function hidePreloader() { 
@@ -169,6 +236,11 @@
 		$(".social i[data-url]").on("click",function() {
 			document.location = $(this).attr("data-url");
 		});
+
+		//email href changer
+		if(window.innerWidth <= 992) {
+			document.getElementsByClassName("email")[0].children[0].href = "mailto:neal.bhanushali@gmail.com";
+		}
 	</script>
 </body>
 </html>
