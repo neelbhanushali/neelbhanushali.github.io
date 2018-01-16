@@ -15,7 +15,7 @@
 			<br>
 			<h3 class="container">Neel Bhanushali</h3>
 			<!-- address -->
-      <span style="position: relative;left: -80px;" class="right">
+      <span id="address" style="position: relative;left: -80px;" class="right">
       	<address class="right-align">
       	403/404 - Omshivparvati CHS, <br>
       	N.S.S. Road, Asalfa Village, <br>
@@ -36,9 +36,9 @@
       <ul class="collection with-header col s12 m8 l8 offset-m2 offset-l2">
       	<li class="collection-header"><b><i>Education</i></b></li>
 		    <li class="collection-item">
-		      <span class="right">2011</span>
-		      <b><i><i class="material-icons left">book</i> <span>SSC</span></i></b><br><br>
-		      <div><i class="material-icons left">location_on</i> <span>A.I.E.S. High School, Ghatkopar</span></div>
+		      <span class="right"><i class="material-icons">access_time</i></span>
+		      <b><i><i class="material-icons left">book</i> <span>Bachelors of Engineering (Computer Engineering)</span></i></b><br><br>
+		      <div><i class="material-icons left">location_on</i> <span>AIKTC, New Panvel</span></div>
 		    </li>
 		    <li class="collection-item">
 		      <span class="right">2013</span>
@@ -46,9 +46,9 @@
 		      <div><i class="material-icons left">location_on</i> <span>SK Somaiya Vinay Mandir, Vidyavihar</span></div>
 		    </li>
 		    <li class="collection-item">
-		      <span class="right"><i class="material-icons">access_time</i></span>
-		      <b><i><i class="material-icons left">book</i> <span>Bachelors of Engineering (Computer Engineering)</span></i></b><br><br>
-		      <div><i class="material-icons left">location_on</i> <span>AIKTC, New Panvel</span></div>
+		      <span class="right">2011</span>
+		      <b><i><i class="material-icons left">book</i> <span>SSC</span></i></b><br><br>
+		      <div><i class="material-icons left">location_on</i> <span>A.I.E.S. High School, Ghatkopar</span></div>
 		    </li>
   		</ul>
 
@@ -230,5 +230,11 @@
     </div>
 		</div>
 	</div>
+	<script>
+		document.body.onload = function() {
+		if(window.innerWidth <= 950)
+			document.getElementById('address').removeAttribute('style');
+		}
+	</script>
 </body>
 </html>
