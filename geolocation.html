@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body onload="getloc()">
+<style type="text/css">
+	table, table th, table td { border: 1px solid black; border-collapse: collapse; }
+</style>
+<button onclick="clearInterval(a)">clear</button>
+<table id="t">
+	<tr>
+		<th>lat</th>
+		<th>lng</th>
+	</tr>
+
+</table>
+
+<p id="demo"></p>
+
+<script>
+
+var a;
+
+function getloc() {
+	a = setInterval(getCurrPos, 1000);
+}
+
+function getCurrPos() {
+	if("geolocation" in navigator) {
+		navigator.geolocation.getCurrentPosition(function (pos) {
+			var lat = pos.coords.latitude;
+			var lng = pos.coords.longitude;
+			var tr = document.createElement("tr");
+			var output = "<td>"+lat+"</td><td>"+lng+"</td>";
+			tr.innerHTML = output;
+			document.getElementById("t").appendChild(tr);
+		});
+	}
+	else {
+		alert("No GeoLocation Support");
+		clearInterval(a);
+	}
+}
+
+</script>
+
+</body>
