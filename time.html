@@ -1,0 +1,81 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+	function _id(x) { return document.getElementById(x); }
+	
+	var a = new Date();
+	
+	
+</script>
+
+<script type="text/javascript">
+	function mdate(date, data) {
+		switch(data) {
+			case "whole":
+				return date;
+				break;
+
+			case "date string":
+				return date.toDateString();
+				break;
+
+			case "date":
+				return date.getDate();
+				break;
+
+			case "month":
+				return date.getMonth();
+				break;
+
+			case "year":
+				return date.getFullYear();
+				break;
+
+			case "day":
+				return date.getDay();
+				break;
+
+			case "time string":
+				return date.toTimeString();
+				break;
+
+			case "hours":
+				return date.getHours();
+				break;
+
+			case "minutes":
+				return date.getMinutes();
+				break;
+
+			case "seconds":
+				return date.getSeconds();
+				break;
+
+			case "milliseconds":
+				return date.getMilliseconds();
+				break;
+
+			case "timezone":
+				var a = date.toTimeString();
+				//https://stackoverflow.com/a/6208451
+				var b = a.replace(/^[^(]*\(/, "") // trim everything before first parenthesis
+				.replace(/\)[^(]*$/, "") // trim everything after last parenthesis
+				.split(/\)[^(]*\(/);      // split between parenthesis
+				return b;
+				break;
+		}
+	}
+</script>
+
+<div>Whole: <script>document.write(mdate(a, "whole"));</script></div>
+<div>Date String: <script>document.write(mdate(a, "date string"));</script></div>
+<div>Date: <script>document.write(mdate(a, "date"));</script></div>
+<div>Month: <script>document.write(mdate(a, "month"));</script></div>
+<div>Year: <script>document.write(mdate(a, "year"));</script></div>
+<div>Day: <script>document.write(mdate(a, "day"));</script></div>
+<div>Time String: <script>document.write(mdate(a, "time string"));</script></div>
+<div>Hours: <script>document.write(mdate(a, "hours"));</script></div>
+<div>Minutes: <script>document.write(mdate(a, "minutes"));</script></div>
+<div>Seconds: <script>document.write(mdate(a, "seconds"));</script></div>
+<div>Milliseconds: <script>document.write(mdate(a, "milliseconds"));</script></div>
+<div>Time Zone: <script>document.write(mdate(a, "timezone"));</script></div>

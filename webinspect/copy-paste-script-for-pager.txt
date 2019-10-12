@@ -1,0 +1,29 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div id="pager" style="text-align: center"></div>
+<hr>
+<script>
+//loading into the div
+$("#pager").load("https://kbdb.000webhostapp.com/webinspect/webinspect.php?topic=html&post=1 #pager select");
+$(document).ready(function() {
+//adding previous link
+if(!$("#pager select option[selected]").is("option:first")) {
+  $("#pager select").before("<a href=\"" + $("#pager select option[selected]").prev().val() + "\">Previous </a>");
+}
+//adding next link
+if(!$("#pager select option[selected]").is("option:last")) {
+ $("#pager select").after("<a href=\"" + $("#pager select option[selected]").next().val() + "\"> Next</a>");
+}
+});
+</script>
+
+
+
+
+
+<hr>
+<div id="pager1" style="text-align: center"></div>
+<script>
+$(document).ready(function() {
+$("#pager1").html($("#pager").html());
+});
+</script>

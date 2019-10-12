@@ -1,0 +1,36 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+	@keyframes infinite_Y_rotation {
+		0% 		{ transform : translate(-50%,-50%) rotateY(0deg); }
+		50% 	{ transform : translate(-50%,-50%) rotateY(180deg); }
+		100% 	{ transform : translate(-50%,-50%) rotateY(360deg); }
+	}
+</style>
+<body>
+<script type="text/javascript">
+	function _el(x) { return document.createElement(x); }
+
+	var div = _el("div");
+	div.style.position = "absolute";
+	div.style.top = "0px";
+	div.style.left = "0px";
+	div.style.width = "100%";
+	div.style.height = "100%";
+	div.style.background = "rgba(69,69,69,0.69)";
+	//div.style.zIndex = "9999";
+
+	var img = _el("img");
+	img.src = "a.png";
+	// img.style.border = "1px solid black";
+	img.style.position = "absolute";
+	img.style.left = "50%";
+	img.style.top = "50%";
+	img.style.animation = "infinite_Y_rotation 2s infinite";
+
+	div.appendChild(img);
+	img.parentNode.style.perspective = "300px";
+
+	document.body.appendChild(div);
+	
+</script>
+</body>
