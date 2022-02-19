@@ -3,30 +3,26 @@
   
     <div class="wrapper">
   
-      <h2 class="footer-heading">{{ site.title | escape }}</h2>
-  
       <div class="footer-col-wrapper">
-        <div class="footer-col footer-col-1">
-          <ul class="contact-list">
-            <!-- <li class="p-name">
-              {%- if site.author -%}
-                {{ site.author | escape }}
-              {%- else -%}
-                {{ site.title | escape }}
-              {%- endif -%}
-              </li> -->
-              {%- if site.email -%}
-              <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-              {%- endif -%}
-          </ul>
-        </div>
-  
-        <div class="footer-col footer-col-2">
+        <div class="footer-col footer-col-3">
+          <h3>Reach out to me</h3>
           {%- include social.html -%}
         </div>
   
         <div class="footer-col footer-col-3">
-          <p>{{- site.description | escape -}}</p>
+          <p>
+            <div>{{- site.description | escape -}}</div>
+            <br>
+            <hr>
+            <br>
+            <div>
+              - BEng (Computers) from <a href="https://www.linkedin.com/school/anjuman-i-islams-school-of-engineering-and-technology-atanjuman-i-islam-kalsekar-technical-mumbai/" target="_blank">AIKTC</a>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div>I've a keen interest in Programming, Web Security and Automation</div>
+          </p>
         </div>
       </div>
   

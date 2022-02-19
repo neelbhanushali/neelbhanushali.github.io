@@ -1,0 +1,188 @@
+---
+layout: page
+title: Resume
+permalink: /resume
+work_experiences:
+    -   role: "Technical Architect"
+        company: "Atrina Technologies Pvt Ltd"
+        company_linkedin: https://www.linkedin.com/company/atrina-technologies-pvt-ltd/
+        from: "03/2020"
+        to: "Present"
+        achievements:
+            -   Custom Frappe Apps
+            -   Tailored Applications in Frappe Framework
+            -   Successful Implementation of eCommerce in Frappe and ERPNext
+    -   role: "Sr. Software Developer"
+        company: "Relife MS"
+        company_linkedin: https://www.linkedin.com/company/relifems/
+        from: "12/2018"
+        to: "02/2020"
+        achievements:
+            -   Building Backend APIs
+            -   Maintaining API documentation with apidocjs
+            -   Stock Management module
+            -   Web scraping
+    -   role: "Software Developer"
+        company: "Emeric Technologies"
+        company_linkedin: https://www.linkedin.com/company/emeric-technologies/
+        from: "08/2018"
+        to: "11/2018"
+        achievements:
+            -   Building Backend APIs for authentication and CRUD
+            -   Integrating API with frontend
+            -   Creating Admin Panels
+            -   Insite - Broker Portal
+personal_projects:
+    -   title: Frappe User Email Change Utility
+        from: 12/2020
+        to: 12/2020
+        link: https://gitlab.com/neelbhanushali/frappe-user-email-change-utility
+        description: Script to change User email (not provided in Frappe Framework)
+    -   title: Frappe Utilities
+        from: 07/2020
+        to: 08/2020
+        link: https://gitlab.com/neelbhanushali/frappe-utilities
+        description: Custom Frappe App including required utilities for Frappe API Development
+    -   title: Frappe Bench Helper
+        from: 07/2020
+        to: 07/2020
+        link: https://gitlab.com/neelbhanushali_atri/frappe-bench-helper
+        description: Easy to run bash script for running bench commands like new-site, backup and restore
+    -   title: Easy Manpower Agency
+        from: 06/2018
+        to: 08/2018
+        link: https://manpoweragency.ae
+        description: Portal to provide/avail manpower in UAE
+    -   title: Country State City Repository
+        from: 04/2018
+        to: 05/2018
+        link: https://github.com/neelbhanushali/Country-State-City-Repository
+        description: Ready to use CSV for Country-State-City data
+    -   title: PHP OOP Boiler Plate
+        from: 02/2018
+        to: 04/2018
+        link: https://github.com/neelbhanushali/php-oop-boilerplate
+        description: Tried implementing Eloquent like ORM for MySQL
+languages_and_tools:
+    -   title: HTML5
+        profeciency: 85
+    -   title: CSS3
+        profeciency: 40
+    -   title: JavaScript
+        profeciency: 85
+    -   title: NodeJS
+        profeciency: 69
+    -   title: PHP
+        profeciency: 75
+    -   title: Python
+        profeciency: 69
+    -   title: MySQL
+        profeciency: 69
+    -   title: MongoDB
+        profeciency: 40
+    -   title: APIDocJS
+        profeciency: 69
+        link: https://apidocjs.com
+frameworks_and_libraries:
+    -   title: Laravel
+        profeciency: 69
+        link: https://laravel.com
+    -   title: ExpressJS
+        profeciency: 40
+        link: https://expressjs.com
+    -   title: MongooseJS
+        profeciency: 85
+        link: https://mongoosejs.com
+    -   title: VueJS
+        profeciency: 40
+        link: https://vuejs.org
+    -   title: MomentJS
+        profeciency: 69
+        link: https://momentjs.com
+    -   title: Frappe
+        profeciency: 85
+        link: https://frappeframework.com
+    -   title: ERPNext
+        profeciency: 69
+        link: https://erpnext.com
+    -   title: Jekyll
+        profeciency: 40
+        link: https://jekyllrb.com
+
+---
+
+<style>
+    .post-header {
+        display: none !important;
+    }
+
+    @media print {
+        .pagebreak { page-break-after: always !important; } /* page-break-after works, as well */
+    }
+</style>
+
+<div class="">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+        <h2 class="footer-heading"><b>Work Ex</b></h2>
+        <ul style="list-style-type: upper-roman;">
+            {% for workex in page.work_experiences %}
+            <li>
+                <b>{{workex.role}}</b><br>
+                @<u><a href="{{workex.company_linkedin}}" target="_blank">{{workex.company}}</a></u><br>
+                <i><span>{{workex.from}}</span> - <span>{{workex.to}}</span></i>
+                <ul>
+                    {% for a in workex.achievements %}
+                    <li>{{a}}</li>
+                    {%endfor%}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h2 class="footer-heading"><b>Personal Projects</b></h2>
+        <ul style="list-style-type: upper-roman;">
+            {% for project in page.personal_projects %}
+            <li>
+                <b><a href="{{project.link}}" target="_blank">{{project.title}}</a></b><br>
+                <i><span>{{project.from}}</span> - <span>{{project.to}}</span></i><br>
+                <u>{{project.description}}</u>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pagebreak"></div>
+      <div class="footer-col footer-col-3">
+        <h2 class="footer-heading"><b>Languages / Tools</b></h2>
+        <ul style="list-style-type: upper-roman;">
+            {% for i in page.languages_and_tools %}
+            <li>
+                {% if i.link %}
+                <b><a href="{{i.link}}" target="_blank">{{i.title}}</a></b>
+                {% else %}
+                <b>{{i.title}}</b>
+                {% endif %}
+                <progress value="{{i.profeciency}}" max="100"></progress>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h2 class="footer-heading"><b>Frameworks / Libraries</b></h2>
+        <ul style="list-style-type: upper-roman;">
+            {% for i in page.frameworks_and_libraries %}
+            <li>
+                <b><a href="{{i.link}}" target="_blank">{{i.title}}</a></b>
+                <progress value="{{i.profeciency}}" max="100"></progress>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+      
+    </div>
+
+  </div>
