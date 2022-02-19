@@ -159,11 +159,11 @@ frameworks_and_libraries:
         <h2 class="footer-heading"><b>Languages / Tools</b></h2>
         <ul style="list-style-type: upper-roman;">
             {% for i in page.languages_and_tools %}
-            <li>
+            <li style="text-align: right;">
                 {% if i.link %}
-                <b><a href="{{i.link}}" target="_blank">{{i.title}}</a></b>
+                <b style="float: left;"><a href="{{i.link}}" target="_blank">{{i.title}}</a></b>
                 {% else %}
-                <b>{{i.title}}</b>
+                <b style="float: left;">{{i.title}}</b>
                 {% endif %}
                 <progress value="{{i.profeciency}}" max="100"></progress>
             </li>
@@ -175,8 +175,8 @@ frameworks_and_libraries:
         <h2 class="footer-heading"><b>Frameworks / Libraries</b></h2>
         <ul style="list-style-type: upper-roman;">
             {% for i in page.frameworks_and_libraries %}
-            <li>
-                <b><a href="{{i.link}}" target="_blank">{{i.title}}</a></b>
+            <li style="text-align: right;">
+                <b style="float: left;"><a href="{{i.link}}" target="_blank">{{i.title}}</a></b>
                 <progress value="{{i.profeciency}}" max="100"></progress>
             </li>
             {% endfor %}
