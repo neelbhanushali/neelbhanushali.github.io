@@ -1,0 +1,102 @@
+---
+layout: page
+<!-- title: Flower Data Entry -->
+permalink: /data-entry
+google_form_id: 1FAIpQLSd5iTloT8AEyhoWo3DowMzGRn1z18hXQqhHDgA_kAbbVp6zEg
+temp_form_action: https://docs.google.com/forms/d/e/1FAIpQLSd5iTloT8AEyhoWo3DowMzGRn1z18hXQqhHDgA_kAbbVp6zEg/viewform?usp=pp_url&entry.358918232=location&entry.1011247012=shop_name&entry.49465701=shop_owner_name&entry.1794745700=shop_owner_contact&entry.238855468=flower_name&entry.154227941=flower_product&entry.1855431738=selling_price&entry.1965212501=buying_price
+form_inputs:
+    -   title: Location
+        name: entry.358918232
+        type: select
+        options: ['GHATKOPAR EAST', 'DADAR']
+    -   title: Shop Name
+        name: entry.1011247012
+        type: text
+    -   title: Shop Owner Name
+        name: entry.49465701
+        type: text
+    -   title: Shop Owner Contact
+        name: entry.1794745700
+        type: number
+    -   title: Flower Name
+        name: entry.238855468
+        type: select
+        options: ['RED ROSE', 'PINK ROSE', 'YELLOW ROSE', 'WHITE ROSE', 'BLACK ROSE', 'GERBERA', 'ORCHID', 'TULIP', 'ASTER', 'LILY', 'CARNATION', 'GYPSOFILLA']
+    -   title: Flower Product
+        name: entry.154227941
+        type: select
+        options: ['SAPLING', 'CUT', 'PETALS (1KG)']
+    -   title: Selling Price
+        name: entry.1855431738
+        type: number
+    -   title: Buying Price
+        name: entry.1965212501
+        type: number
+---
+
+<style>
+input[type=text], input[type=number], select, textarea {
+  width: 95%;
+  padding: 12px;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 4px; */
+  resize: vertical;
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+
+<div class="">
+    <div class="footer-col-wrapper">
+      <h2 class="footer-heading"><b>Flower Data Entry</b></h2>
+      <form action="https://docs.google.com/forms/d/e/{{page.google_form_id}}/formResponse" method="get" target="google_form">
+        {% for input in page.form_inputs %}
+        <div class="footer-col footer-col-3" style="text-align: center;">
+            {% if input.type == 'select' %}
+            <select type="text" name="{{input.name}}" required>
+                <option selected disabled>{{input.title}}</option>
+                {% for option in input.options %}
+                <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+            {% endif %}
+            {% if input.type == 'text' or input.type == 'number' %}
+            <input type="{{input.type}}" name="{{input.name}}" placeholder="{{input.title}}">
+            {% endif %}
+        </div>
+        {% endfor %}
+        <input type="submit" value="Submit">
+      </form>
+
+      
+      <iframe onload="document.forms[0].reset()" name="google_form" src="https://docs.google.com/forms/d/e/{{page.google_form_id}}/viewform?embedded=true" width="0" height="0" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+
+  </div>
